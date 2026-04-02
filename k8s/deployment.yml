@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: tcc-ossn-app
-        image: ghcr.io/cristopherpds/tcc-ossn-app:0.2.0
+        image: ghcr.io/cristopherpds/tcc-ossn-app:0.4.0
         ports:
         - containerPort: 80
