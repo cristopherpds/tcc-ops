@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tcc-ossn-app
+  namespace: app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tcc-ossn-app
+  template:
+    metadata:
+      labels:
+        app: tcc-ossn-app
+    spec:
+      containers:
+      - name: tcc-ossn-app
+        image: ghcr.io/cristopherpds/tcc-ossn-app:latest # Cambiar por el tag de la imagen dinámica de GHCR
+        ports:
+        - containerPort: 80
