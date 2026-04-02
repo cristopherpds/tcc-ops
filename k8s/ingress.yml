@@ -1,14 +1,15 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: tcc-ossn-app
+  name: tcc-ossn-app-service
   namespace: app
   annotations:
-    kubernetes.io/ingress.class: "gce"
+    #kubernetes.io/ingress.class: "gce"
     kubernetes.io/ingress.global-static-ip-name: "argocd-ip"
-    networking.gke.io/managed-certificates: "argocd-cert"
+    networking.gke.io/managed-certificates: "app-cert"
     kubernetes.io/ingress.allow-http: "false"
 spec:
+  ingressClassName: gce
   rules:
     - host: app.cristopherpds.dev  # mi dominio
       http:
@@ -17,6 +18,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: tcc-ossn-app
+                name: tcc-ossn-app-service
                 port:
                   number: 80
