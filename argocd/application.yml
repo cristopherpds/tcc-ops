@@ -4,13 +4,14 @@ metadata:
   name: tcc-ossn-app
   namespace: argocd
 spec:
+  project: tcc-ops-project
+  source:
+    repoURL: https://github.com/cristopherpds/tcc-ops.git
+    targetRevision: deploy/app
+    path: k8s
   destination:
     server: https://kubernetes.default.svc
     namespace: app
-  source:
-    repoURL: https://github.com/cristopherpds/tcc-ops.git  # Repositorio donde están los manifests ops
-    path: k8s
-    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true

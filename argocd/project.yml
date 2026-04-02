@@ -1,12 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: default
+  name: tcc-ops-project
   namespace: argocd
 spec:
-  description: "Default project for ArgoCD"
-  destinations:
-    - server: https://kubernetes.default.svc
-      namespace: app
+  description: "Proyecto para la app TCC-OSSN"
   sourceRepos:
-    - 'https://github.com/cristopherpds/tcc-ops.git'
+    - https://github.com/cristopherpds/tcc-ops.git
+  destinations:
+    - namespace: app
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
