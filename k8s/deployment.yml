@@ -13,6 +13,8 @@ spec:
       labels:
         app: tcc-ossn-app
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
       - name: tcc-ossn-app
         image: ghcr.io/cristopherpds/tcc-ossn-app:latest # Cambiar por el tag de la imagen dinámica de GHCR
