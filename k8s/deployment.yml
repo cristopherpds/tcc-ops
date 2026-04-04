@@ -4,7 +4,7 @@ metadata:
   name: tcc-ossn-app
   namespace: app
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: tcc-ossn-app
@@ -13,6 +13,8 @@ spec:
       labels:
         app: tcc-ossn-app
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
       - name: tcc-ossn-app
         image: ghcr.io/cristopherpds/tcc-ossn-app:v0.5.0 # Cambiar por el tag de la imagen dinámica de GHCR

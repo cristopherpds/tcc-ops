@@ -8,3 +8,9 @@ variable "region" {
   type        = string
   default     = "us-central1"
 }
+
+variable "cluster_name" {
+    description = "k8s-cluster"
+    type = string
+    default = "tcc-autopilot"
+}

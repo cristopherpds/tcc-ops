@@ -4,9 +4,10 @@ metadata:
   name: argocd-server-ingress
   namespace: argocd
   annotations:
-    kubernetes.io/ingress.class: "gce"                        # Usa el controlador GCE Ingress
-    networking.gke.io/managed-certificates: "argocd-cert"      # Certificado gestionado por Google
-    ingress.gcp.kubernetes.io/pre-shared-cert: "argocd-cert"  # Alternativa si es pre-shared
+    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.global-static-ip-name: "argocd-ip"
+    networking.gke.io/managed-certificates: "argocd-cert"
+    kubernetes.io/ingress.allow-http: "false"
 
 spec:
   rules:
@@ -19,9 +20,4 @@ spec:
           service:
             name: argocd-server
             port:
-              number: 443
-
-  tls:
-  - hosts:
-    - argocd.tu-dominio.com
-    secretName: argocd-tls-secret  # El secreto lo administra Google Managed Certificate
+              number: 80
