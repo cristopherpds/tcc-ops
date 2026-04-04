@@ -17,6 +17,6 @@ spec:
         - name: ghcr-secret
       containers:
       - name: tcc-ossn-app
-        image: ghcr.io/cristopherpds/tcc-ossn-app:latest # Cambiar por el tag de la imagen dinámica de GHCR
+        image: ghcr.io/cristopherpds/tcc-ossn-app:0.5.0
         ports:
         - containerPort: 80
