@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tcc-ossn-config
+  namespace: app
+data:
+  OSSN_DATA: "/var/www/ossn_data"
+  WEBSITE_NAME: "{{ WEBSITE_NAME }}"
+  SITE_OWNER_EMAIL: "{{ SITE_OWNER_EMAIL }}"
+  NOTIFICATION_EMAIL: "{{ NOTIFICATION_EMAIL }}"
