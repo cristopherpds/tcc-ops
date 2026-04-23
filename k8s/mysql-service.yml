@@ -7,7 +7,6 @@ spec:
   selector:
     app: mysql
   ports:
-    - protocol: TCP
-      port: 3306
+    - port: 3306
       targetPort: 3306
-  clusterIP: None  # Esto es necesario para que los pods puedan acceder a través de DNS (mysql-0, mysql-1, etc.)
+  type: ClusterIP

@@ -17,34 +17,15 @@ spec:
       containers:
       - name: mysql
         image: mysql:8.0
-        resources:
-          requests:
-            cpu: 250m
-            memory: 512Mi
-          limits:
-            cpu: 500m
-            memory: 1Gi
         env:
         - name: MYSQL_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: tcc-ossn-secret
-              key: MYSQL_ROOT_PASSWORD
+          value: "rootpass"
         - name: MYSQL_DATABASE
-          valueFrom:
-            secretKeyRef:
-              name: tcc-ossn-secret
-              key: MYSQL_DATABASE
+          value: "ossndb"
         - name: MYSQL_USER
-          valueFrom:
-            secretKeyRef:
-              name: tcc-ossn-secret
-              key: MYSQL_USER
+          value: "ossnuser"
         - name: MYSQL_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: tcc-ossn-secret
-              key: MYSQL_PASSWORD
+          value: "supersecret"
         ports:
         - containerPort: 3306
         volumeMounts:
@@ -57,4 +38,4 @@ spec:
       accessModes: ["ReadWriteOnce"]
       resources:
         requests:
-          storage: 5Gi  # Tamaño del volumen persistente
+          storage: 5Gi
