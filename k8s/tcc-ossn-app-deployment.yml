@@ -21,6 +21,11 @@ spec:
         ports:
         - containerPort: 80
         env:
+          - name: DB_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: tcc-ossn-config
+                key: DB_HOST
           - name: OSSN_DATA
             valueFrom:
               configMapKeyRef:
