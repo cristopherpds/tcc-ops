@@ -5,6 +5,7 @@ metadata:
   namespace: app
 data:
   OSSN_DATA: "/var/www/ossn_data"
-  WEBSITE_NAME: "{{ WEBSITE_NAME }}"
-  SITE_OWNER_EMAIL: "{{ SITE_OWNER_EMAIL }}"
-  NOTIFICATION_EMAIL: "{{ NOTIFICATION_EMAIL }}"
+  WEBSITE_NAME: "TCC POC GITOPS"
+  SITE_OWNER_EMAIL: "TCC Social Network"
+  NOTIFICATION_EMAIL: "noreply@tcc.local"
+  DB_HOST: "mysql"
