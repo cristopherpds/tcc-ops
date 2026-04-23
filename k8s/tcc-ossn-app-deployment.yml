@@ -22,10 +22,7 @@ spec:
         - containerPort: 80
         env:
           - name: DB_HOST
-            valueFrom:
-              configMapKeyRef:
-                name: tcc-ossn-config
-                key: DB_HOST
+            value: "mysql"
           - name: OSSN_DATA
             valueFrom:
               configMapKeyRef:
@@ -41,28 +38,21 @@ spec:
               configMapKeyRef:
                 name: tcc-ossn-config
                 key: SITE_OWNER_EMAIL
+
           - name: NOTIFICATION_EMAIL
             valueFrom:
               configMapKeyRef:
                 name: tcc-ossn-config
                 key: NOTIFICATION_EMAIL
+
           - name: MYSQL_USER
-            valueFrom:
-              secretKeyRef:
-                name: tcc-ossn-secret
-                key: MYSQL_USER
+            value: "ossnuser"
+
           - name: MYSQL_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: tcc-ossn-secret
-                key: MYSQL_PASSWORD
+            value: "supersecret"
+
           - name: MYSQL_DATABASE
-            valueFrom:
-              secretKeyRef:
-                name: tcc-ossn-secret
-                key: MYSQL_DATABASE
+            value: "ossndb"
+
           - name: MYSQL_ROOT_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: tcc-ossn-secret
-                key: MYSQL_ROOT_PASSWORD
+            value: "rootpass"
