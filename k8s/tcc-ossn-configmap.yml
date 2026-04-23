@@ -6,6 +6,6 @@ metadata:
 data:
   OSSN_DATA: "/var/www/ossn_data"
   WEBSITE_NAME: "TCC POC GITOPS"
-  SITE_OWNER_EMAIL: "TCC Social Network"
-  NOTIFICATION_EMAIL: "noreply@tcc.local"
+  SITE_OWNER_EMAIL: "tcc@tcc.local"
+  NOTIFICATION_EMAIL: "tcc@tcc.local"
   DB_HOST: "mysql"
