@@ -1,0 +1,21 @@
+# Terraform lock file i working directories
+.terraform/
+.terraform.lock.hcl
+
+# State files
+*.tfstate
+*.tfstate.backup
+
+# Variables file
+terraform.tfvars
+terraform.tfvars.json
+*.auto.tfvars
+
+# Keys and auth
+*.key.json
+auth.json
+
+# Temp files
+.DS_Store
+.idea/
+.vscode/
