@@ -4,5 +4,5 @@ metadata:
   name: app-config
   namespace: app
 data:
-  PROJECT_ID: "gke-autopilot-gitops-starter"
+  PROJECT_ID: "cristopherpds"
   ENV: "production"

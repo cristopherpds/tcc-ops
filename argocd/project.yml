@@ -4,11 +4,10 @@ metadata:
   name: app-project
   namespace: argocd
 spec:
-  description: Project for FastAPI application deployed via GitOps
+  description: Projeto para aplicação FastAPI implantada via GitOps
   
   sourceRepos:
-    - https://github.com/Kacper7011/GKE-Autopilot-GitOps-Starter.git
-
+    - https://github.com/cristopherpds/TCC.git
   destinations:
     - namespace: app
       server: https://kubernetes.default.svc

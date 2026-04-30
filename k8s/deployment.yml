@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fastapi-app
+  name: tcc-app
   namespace: app
   labels:
-    app: fastapi-app
+    app: tcc-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: fastapi-app
+      app: tcc-app
   template:
     metadata:
       labels:
-        app: fastapi-app
+        app: tcc-app
     spec:
       containers:
-        - name: fastapi-app
-          image: europe-west1-docker.pkg.dev/gke-autopilot-gitops-starter/app-repo/fastapi-app:0.0.6
+        - name: tcc-app
+          image: ghcr.io/cristopherpds/tcc-app:latest
           ports:
             - containerPort: 8080
           env:
