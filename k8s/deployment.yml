@@ -15,6 +15,8 @@ spec:
       labels:
         app: tcc-app
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: tcc-app
           image: ghcr.io/cristopherpds/tcc-app:v0.1.0
