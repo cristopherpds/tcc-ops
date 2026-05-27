@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: tcc-app
-          image: ghcr.io/cristopherpds/tcc-app:v0.1.2
+          image: ghcr.io/cristopherpds/tcc-app:v0.1.3
           ports:
             - containerPort: 8080
           env:
