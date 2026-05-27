@@ -19,7 +19,7 @@ spec:
         - name: ghcr-secret
       containers:
         - name: tcc-app
-          image: ghcr.io/cristopherpds/tcc-app:v0.1.0
+          image: ghcr.io/cristopherpds/tcc-app:v0.1.7
           ports:
             - containerPort: 8080
           env:
